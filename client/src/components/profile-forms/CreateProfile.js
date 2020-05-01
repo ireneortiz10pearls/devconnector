@@ -3,7 +3,6 @@ import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createProfile } from '../../actions/profile';
-import auth from '../../reducers/auth';
 
 const CreateProfile = ({ createProfile, history }) => {
   const [formData, setFormData] = useState({
@@ -224,9 +223,5 @@ const CreateProfile = ({ createProfile, history }) => {
 CreateProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
 };
-
-const mapStateToProps = (state) => ({
-  isAutenticated: state.aut,
-});
 
 export default connect(null, { createProfile })(withRouter(CreateProfile));
